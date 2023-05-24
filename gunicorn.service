@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+#Requires=gunicorn.socket
+After=network.target
+
+[Service]
+#Type=notify
+User=ubuntu
+Group=www-data
+#RuntimeDirectory=gunicorn
+WorkingDirectory=/home/ubuntu/api
+#ExecStart=/usr/bin/gunicorn applicationname.wsgi
+ExecStart=/home/ubuntu/api/venv/bin/gunicorn -b 0.0.0.0:5000 app:app
+#ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+[Install]
+WantedBy=multi-user.target

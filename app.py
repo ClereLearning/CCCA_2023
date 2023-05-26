@@ -1,6 +1,6 @@
 import uuid
 
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect
 app = Flask(__name__)
 
 movies = [
@@ -55,7 +55,10 @@ def delete_movie(id):
   for movie in movies:
     if movie["id"] == (str(id)):
         movies.remove(movie)
-        return jsonify(movie), 200
+        #return jsonify(movie), 200 changing to template
+        return redirect('/')
+    else:
+        return render_template('delete.html', movie = movie)
   return f'Movie with id {id} not found', 404        
 #movies.remove(movie)
 #return f'Movie with id {id} has been removed', 200    

@@ -28,8 +28,8 @@
                     <ion-col size="6" size-md="2" >{{movie.releaseddate}}</ion-col>
                     <ion-col size="6" size-md="2" >{{movie.mainactors}}</ion-col>
                     <ion-col size="6" size-md="2" >{{movie.directors}}</ion-col>
-                    <ion-col size="6" size-md="2" ><a href="/update_movie/{{ movie2.id }}">Update</a></ion-col>
-                    <ion-col size="6" size-md="2" ><a href="/delete_movie/{{ movie2.id }}">Delete</a></ion-col>
+                    <ion-col size="6" size-md="2" ><a href="/update_movie/{{ movie.id }}">Update</a></ion-col>
+                    <ion-col size="6" size-md="2" ><a href="/delete_movie/{{ movie.id }}">Delete</a></ion-col>
                 </ion-row>
                 {% endfor %}
             </ion-grid>            

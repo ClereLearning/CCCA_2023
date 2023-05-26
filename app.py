@@ -27,6 +27,10 @@ movies = [
 def index():
   return render_template('homepage.html', data = movies)
 
+@app.route('/add/<string:id>', methods=['GET','POST'])
+def add():      
+  return render_template('add.html', data = movies)
+
 #Add a single data point (for example /add_movie)
 @app.post("/add_movie")
 def add_movie():
@@ -96,6 +100,3 @@ def update_movie(id):
           return render_template('update.html', movie = movie)
   return f'movie with id {id} not found', 404
 
-@app.get('/add')
-def add():    
-  return render_template('add.html', data = movies)

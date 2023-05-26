@@ -8,7 +8,7 @@ movies = [
         "id": "1",
         "title": "xxx",
         "plotsumary": "aaaaaaaaaaaaa",
-        "released":"2022-03-29",
+        "releaseddate":"2022-03-29",
         "mainactors": "rrrrrrrrrrrr",
         "directors": "dddddddddddd1"
     },
@@ -16,7 +16,7 @@ movies = [
         "id": "2",
         "title": "ggg",
         "plotsumary": "bbbbbbbbbbbbbbb",
-        "released":"2022-03-29",
+        "releaseddate":"2022-03-29",
         "mainactors": "ttttttttttt",
         "directors": "dddddddddddd2"
     }    
@@ -33,27 +33,6 @@ def index():
 def add_movie():
     data = request.get_json()  
     idunique = str(uuid.uuid4())
-    
-    #"id": "1",
-    #"title": "xxx",
-    #"plotsumary": "",
-    #"releasedate":2022-03-29,
-    #"mainactors": "",
-    #"directors": ""
-
-    #mainactors = []  
-    #for item in data["mainactors"]:
-    #    mainactors.append({"actor": item.actor})
-    
-    #directors = []
-    #for item in data["directors"]:
-    #    directors.append({"firstname": item.firstname ,"lastname": item.lastname})
-
-    #writers = []   
-    #for item in data["writers"]:
-    #    writers.append({"firstname": item.firstname ,"lastname": item.lastname})
-
-    
     new_movie = {"id": idunique, "title": data["title"], "plotsumary" : data["plotsumary"], "releasedate" : data["releasedate"], "mainactors": data["mainactors"], "directors": data["directors"]} 
     movies.append(new_movie)
     return jsonify(new_movie), 201

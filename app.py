@@ -34,7 +34,8 @@ def add_movie():
     idunique = str(uuid.uuid4())
     new_movie = {"id": idunique, "title": data["title"], "plotsumary" : data["plotsumary"], "releasedate" : data["releaseddate"], "mainactors": data["mainactors"], "directors": data["directors"]} 
     movies.append(new_movie)
-    return jsonify(new_movie), 201
+    #return jsonify(new_movie), 201
+    return redirect('/')
     
 #Get all data (for example /movies)
 @app.get('/movies')
@@ -50,16 +51,19 @@ def get_movie(id):
   return f'Movie with id {id} not found', 404
 
 #Delete a single data point (for example /delete_movie)
-@app.delete('/delete_movie/<string:id>')
+#@app.delete('/delete_movie/<string:id>')
+@app.route('/delete_movie/<int:id>', methods=['GET','POST'])
 def delete_movie(id):
   for movie in movies:
     if movie["id"] == (str(id)):
+      if request.method=="POST":
         movies.remove(movie)
         #return jsonify(movie), 200 changing to template
         return redirect('/')
-    else:
+      else:
         return render_template('delete.html', movie = movie)
-  return f'Movie with id {id} not found', 404        
+  return f'Movie with id {id} not found', 404 
 #movies.remove(movie)
 #return f'Movie with id {id} has been removed', 200    
 #return f'Movie with id {id} not found', 404
+

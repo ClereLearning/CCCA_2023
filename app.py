@@ -86,10 +86,11 @@ def update_movie(id):
     if movie["id"] == (str(id)):
         if request.method=="POST":
           movie["id"] = str(request.form['id'])
-          movie["title"] = request.form['title']
-          movie["plotsumary"] = request.form['plotsumary']
-          movie["mainactors"] = request.form['mainactors']
-          movie["directors"] = request.form['directors']
+          movie["title"] = str(request.form['title'])
+          movie["plotsumary"] = str(request.form['plotsumary'])
+          movie["releaseddate"] = str(request.form['releaseddate'])
+          movie["mainactors"] = str(request.form['mainactors'])
+          movie["directors"] = str(request.form['directors'])
           return redirect('/')
         else:
           return render_template('update.html', movie = movie)

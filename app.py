@@ -33,7 +33,7 @@ def index():
 def add_movie():
     data = request.get_json()  
     idunique = str(uuid.uuid4())
-    new_movie = {"id": idunique, "title": data["title"], "plotsumary" : data["plotsumary"], "releasedate" : data["releasedate"], "mainactors": data["mainactors"], "directors": data["directors"]} 
+    new_movie = {"id": idunique, "title": data["title"], "plotsumary" : data["plotsumary"], "releasedate" : data["releaseddate"], "mainactors": data["mainactors"], "directors": data["directors"]} 
     movies.append(new_movie)
     return jsonify(new_movie), 201
     

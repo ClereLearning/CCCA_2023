@@ -96,3 +96,6 @@ def update_movie(id):
           return render_template('update.html', movie = movie)
   return f'movie with id {id} not found', 404
 
+@app.route('/add', methods=['GET','POST'])
+def add():    
+    return render_template('add.html', data = movies)

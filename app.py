@@ -65,7 +65,7 @@ def delete_movie(id):
   return f'Movie with id {id} not found', 404 
 
 @app.route('/delete_moviebyget/<int:id>', methods=['GET','POST'])
-def delete_movie(id):
+def delete_moviebyget(id):
   for movie in movies:
     if movie["id"] == (str(id)):
       if request.method=="GET":

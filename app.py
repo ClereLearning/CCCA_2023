@@ -75,8 +75,8 @@ def get_movie(id):
 @app.delete('/delete_movie/<int:id>')
 def delete_movie(id):
     for movie in movies:        
-    if movie["id"] == id:
+      if movie["id"] == id:
         movies.remove(movie)
-    return f'Movie with id {id} has been removed', 200
+        return f'Movie with id {id} has been removed', 200
     
   return f'Movie with id {id} not found', 404

@@ -25,8 +25,7 @@ movies = [
 #website
 @app.get('/')
 def index():
-  idunique = str(uuid.uuid4())
-  return 'Welcome to our BlockBuster API V3' + idunique
+  return render_template('homepage.html', data = movies)
 
 #Add a single data point (for example /add_movie)
 @app.post("/add_movie")

@@ -5,10 +5,55 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Update Movie</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>       
+        <script>
+            function validateUpdate() {
+                let tit = document.forms["updateit"]["title"].value;
+                let release = document.forms["updateit"]["releaseddate"].value;
+                let actors = document.forms["updateit"]["mainactors"].value;
+                let direct = document.forms["updateit"]["directors"].value;
+                let plot = document.forms["updateit"]["plotsumary"].value;
+                
+                if (plot == "") {
+                    alert("Plot is required. Please, verify.");
+                    return false;
+                }
+
+                if (direct == "") {
+                    alert("Directors is required. Please, verify.");
+                    return false;
+                }
+
+                if (actors == "") {
+                    alert("Actors is required. Please, verify.");
+                    return false;
+                }
+
+                if (release == "") {
+                    alert("Release date is required. Please, verify.");
+                    return false;
+                }
+
+                if (tit == "") {
+                    alert("Title is required. Please, verify.");
+                    return false;
+                }
+            }
+        </script>
     </head>    
     <body>
+        <form action="/update_movie/{{ movie.id }}" method="POST" name="updateit" onsubmit="return validateUpdate()" >
+            <h2>Update Book:</h2>
+            <ul>                
+                <li>Title <input type="text" name="title" value="{{ movie.title }}"></li>
+                <li>Plot sumary <input type="text" name="plotsumary" value="{{ movie.plotsumary }}"></li>
+                <li>Released date <input type="text" name="releaseddate" value="{{ movie.releaseddate }}"></li>
+                <li>Main Actors<input type="text" name="mainactors" value="{{ movie.mainactors }}"></li>
+                <li>Directors <input type="text" name="directors" value="{{ movie.directors }}"></li>
+            </ul>
+            <button type="submit" class="btn btn-primary">Move Update</button>
+        </form>
     </body>
 </html>

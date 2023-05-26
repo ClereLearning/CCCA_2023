@@ -13,23 +13,23 @@
         <ion-app>
             <ion-grid>
                 <ion-row>
-                    <ion-col size="6" size-md="2" >Title</ion-col>
-                    <ion-col size="6" size-md="2" >Plot sumary</ion-col>
-                    <ion-col size="6" size-md="2" >Released date</ion-col>
-                    <ion-col size="6" size-md="2" >Main actors</ion-col>
-                    <ion-col size="6" size-md="2" >Directors</ion-col>
-                    <ion-col size="6" size-md="2" ></ion-col>
-                    <ion-col size="6" size-md="2" ></ion-col>
+                    <ion-col>Title</ion-col>
+                    <ion-col>Plot sumary</ion-col>
+                    <ion-col>Released date</ion-col>
+                    <ion-col>Main actors</ion-col>
+                    <ion-col>Directors</ion-col>
+                    <ion-col></ion-col>
+                    <ion-col></ion-col>
                 </ion-row>
                 {% for movie in data %}
                 <ion-row>
-                    <ion-col size="6" size-md="2" >{{movie.title}}</ion-col>
-                    <ion-col size="6" size-md="2" >{{movie.plotsumary}}</ion-col>
-                    <ion-col size="6" size-md="2" >{{movie.releaseddate}}</ion-col>
-                    <ion-col size="6" size-md="2" >{{movie.mainactors}}</ion-col>
-                    <ion-col size="6" size-md="2" >{{movie.directors}}</ion-col>
-                    <ion-col size="6" size-md="2" ><a href="/update_movie/{{ movie.id }}">Update</a></ion-col>
-                    <ion-col size="6" size-md="2" ><a href="/delete_movie/{{ movie.id }}">Delete</a></ion-col>
+                    <ion-col>{{movie.title}}</ion-col>
+                    <ion-col>{{movie.plotsumary}}</ion-col>
+                    <ion-col>{{movie.releaseddate}}</ion-col>
+                    <ion-col>{{movie.mainactors}}</ion-col>
+                    <ion-col>{{movie.directors}}</ion-col>
+                    <ion-col><a href="/update_movie/{{ movie.id }}">Update</a></ion-col>
+                    <ion-col><a href="/delete_movie/{{ movie.id }}">Delete</a></ion-col>
                 </ion-row>
                 {% endfor %}
             </ion-grid>            

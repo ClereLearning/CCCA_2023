@@ -20,7 +20,8 @@
                     <ion-col size="6" size-md="2" >Directors</ion-col>
                     <ion-col size="6" size-md="2" ></ion-col>                    
                 </ion-row>
-                <ion-row *ngFor="let movie of data">
+                {% for movie in data %}
+                <ion-row>
                     <ion-col size="6" size-md="2" >{{ movie.title}}</ion-col>
                     <ion-col size="6" size-md="2" >Plot sumary</ion-col>
                     <ion-col size="6" size-md="2" >Released date</ion-col>
@@ -28,15 +29,16 @@
                     <ion-col size="6" size-md="2" >Directors</ion-col>
                     <ion-col size="6" size-md="2" ></ion-col>
                 </ion-row>
+                {% endfor %}
             </ion-grid>
             <table>
-                {% for movie in data %}
+                {% for movie2 in data %}
                 <tr>
-                    <td>{{ movie.title }} </td>
-                    <td>{{ movie.plotsumary }} </td>
-                    <td>{{ movie.price }} </td>
-                    <td><a href="/update_movie/{{ movie.id }}">Update</a></td>
-                    <td><a href="/delete_movie/{{ movie.id }}">Delete</a></td>                
+                    <td>{{ movie2.title }} </td>
+                    <td>{{ movie2.plotsumary }} </td>
+                    <td>{{ movie2.price }} </td>
+                    <td><a href="/update_movie/{{ movie2.id }}">Update</a></td>
+                    <td><a href="/delete_movie/{{ movie2.id }}">Delete</a></td>                
                 </tr>
                 {% endfor %}
             </table>

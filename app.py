@@ -28,7 +28,7 @@ def index():
   return render_template('homepage.html', data = movies)
 
 @app.route('/add/<string:id>', methods=['GET','POST'])
-def add():      
+def add(id):      
   return render_template('add.html', data = movies)
 
 #Add a single data point (for example /add_movie)

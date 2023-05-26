@@ -46,7 +46,7 @@
         </script>
     </head>    
     <body>
-        <form action="/add_movie/{{ movie.id }}" method="POST" onsubmit="return validateAdd()" >
+        <form action="/add_movie/" method="POST" onsubmit="return validateAdd()" >
             <h2>Adding a new Movie:</h2>
             <ul>                
                 <li>Title <input type="text" name="title" value="{{ movie.title }}"></li>

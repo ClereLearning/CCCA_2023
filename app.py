@@ -95,7 +95,7 @@ def update_movie(id):
           movie["releaseddate"] = str(request.form['releaseddate'])
           movie["mainactors"] = str(request.form['mainactors'])
           movie["directors"] = str(request.form['directors'])
-          return redirect('/')
+          return redirect(url_for('/'))
         else:
           return render_template('update.html', movie = movie)
   return f'movie with id {id} not found', 404

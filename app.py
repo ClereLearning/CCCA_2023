@@ -73,8 +73,7 @@ def delete_moviebyget(id):
   for movie in movies:
     if movie["id"] == (str(id)):
       if request.method=="GET":
-        movies.remove(movie)
-        #return jsonify(movie), 200 changing to template
+        movies.remove(movie)        
         return redirect('/')
       else:
         return render_template('delete.html', movie = movie)
@@ -86,11 +85,7 @@ def update_movie(id):
   for movie in movies:
     if movie["id"] == (str(id)):
         if request.method=="POST":
-          movie["id"] = str(request.form['id'])
-          movie["title"] = request.form['title']
-          movie["plotsumary"] = request.form['plotsumary']
-          movie["mainactors"] = float(request.form['mainactors'])
-          movie["directors"] = float(request.form['directors'])
+
           return redirect('/')
         else:
           return render_template('update.html', movie = movie)

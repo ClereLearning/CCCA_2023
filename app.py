@@ -8,7 +8,7 @@ movies = [
         "id": "1",
         "title": "xxx",
         "plotsumary": "aaaaaaaaaaaaa",
-        "released":2022-03-29,
+        "released":"2022-03-29",
         "mainactors": "rrrrrrrrrrrr",
         "directors": "dddddddddddd1"
     },
@@ -16,7 +16,7 @@ movies = [
         "id": "2",
         "title": "ggg",
         "plotsumary": "bbbbbbbbbbbbbbb",
-        "released":2022-03-29,
+        "released":"2022-03-29",
         "mainactors": "ttttttttttt",
         "directors": "dddddddddddd2"
     }    

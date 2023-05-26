@@ -52,7 +52,7 @@ def get_movie(id):
 
 #Delete a single data point (for example /delete_movie)
 #@app.delete('/delete_movie/<string:id>')
-@app.route('/delete_movie/<int:id>', methods=['GET','POST'])
+@app.route('/delete_movie/<string:id>', methods=['GET','POST'])
 def delete_movie(id):
   for movie in movies:
     if movie["id"] == (str(id)):
@@ -63,8 +63,12 @@ def delete_movie(id):
       else:
         return render_template('delete.html', movie = movie)
   return f'Movie with id {id} not found', 404 
+#movies.remove(movie)
+#return f'Movie with id {id} has been removed', 200    
+#return f'Movie with id {id} not found', 404
 
-@app.route('/delete_moviebyget/<int:id>', methods=['GET','POST'])
+
+@app.route('/delete_moviebyget/<string:id>', methods=['GET','POST'])
 def delete_moviebyget(id):
   for movie in movies:
     if movie["id"] == (str(id)):
@@ -75,6 +79,20 @@ def delete_moviebyget(id):
       else:
         return render_template('delete.html', movie = movie)
   return f'Movie with id {id} not found', 404 
-#movies.remove(movie)
-#return f'Movie with id {id} has been removed', 200    
-#return f'Movie with id {id} not found', 404
+
+#Update a single data point (for example /update_movie)
+@app.route('/update_movie/<string:id>', methods=['GET','POST'])
+def update_movie(id):  
+  for movie in movies:
+    if movie["id"] == (str(id)):
+        if request.method=="POST":
+          movie["id"] = str(request.form['id'])
+          movie["title"] = request.form['title']
+          movie["plotsumary"] = request.form['plotsumary']
+          movie["mainactors"] = float(request.form['mainactors'])
+          movie["directors"] = float(request.form['directors'])
+          return redirect('/')
+        else:
+          return render_template('update.html', movie = movie)
+  return f'movie with id {id} not found', 404
+

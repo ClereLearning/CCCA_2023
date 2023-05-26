@@ -67,15 +67,15 @@ def hello():
 @app.get('/movie/<string:id>')
 def get_movie(id):
   for movie in movies:
-    if movie["id"] == id:
+    if movie["id"] == (str(id)):
         return jsonify(movie)
   return f'Movie with id {id} not found', 404
 
 #Delete a single data point (for example /delete_movie)
 @app.delete('/delete_movie/<string:id>')
-def delete_movie(cstr(id)):
+def delete_movie(id):
     for movie in movies:        
-      if movie["id"] == id:
+      if movie["id"] == str(id):
         movies.remove(movie)
         return f'Movie with id {id} has been removed', 200    
     return f'Movie with id {id} not found', 404

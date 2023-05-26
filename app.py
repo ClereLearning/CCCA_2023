@@ -63,6 +63,18 @@ def delete_movie(id):
       else:
         return render_template('delete.html', movie = movie)
   return f'Movie with id {id} not found', 404 
+
+@app.route('/delete_moviebyget/<int:id>', methods=['GET','POST'])
+def delete_movie(id):
+  for movie in movies:
+    if movie["id"] == (str(id)):
+      if request.method=="GET":
+        movies.remove(movie)
+        #return jsonify(movie), 200 changing to template
+        return redirect('/')
+      else:
+        return render_template('delete.html', movie = movie)
+  return f'Movie with id {id} not found', 404 
 #movies.remove(movie)
 #return f'Movie with id {id} has been removed', 200    
 #return f'Movie with id {id} not found', 404

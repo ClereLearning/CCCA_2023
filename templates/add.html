@@ -49,11 +49,11 @@
         <form action="/add_movie/" method="POST" onsubmit="return validateAdd()" >
             <h2>Adding a new Movie:</h2>
             <ul>                
-                <li>Title <input type="text" name="title" value="{{ movie.title }}"></li>
-                <li>Plot sumary <input type="text" name="plotsumary" value="{{ movie.plotsumary }}"></li>
-                <li>Released date <input type="text" name="releaseddate" value="{{ movie.releaseddate }}"></li>
-                <li>Main Actors<input type="text" name="mainactors" value="{{ movie.mainactors }}"></li>
-                <li>Directors <input type="text" name="directors" value="{{ movie.directors }}"></li>
+                <li>Title <input type="text" name="title"></li>
+                <li>Plot sumary <input type="text" name="plotsumary" ></li>
+                <li>Released date <input type="text" name="releaseddate" ></li>
+                <li>Main Actors<input type="text" name="mainactors" ></li>
+                <li>Directors <input type="text" name="directors" ></li>
             </ul>
             <button type="submit" class="btn btn-primary">Move Update</button>
         </form>

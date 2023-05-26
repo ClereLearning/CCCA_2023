@@ -98,5 +98,4 @@ def update_movie(id):
 
 @app.get('/add')
 def add():    
-    return redirect('/add.html')
-    #return render_template('add.html', data = movies)
+  return render_template('add.html', data = movies)

@@ -18,30 +18,21 @@
                     <ion-col size="6" size-md="2" >Released date</ion-col>
                     <ion-col size="6" size-md="2" >Main actors</ion-col>
                     <ion-col size="6" size-md="2" >Directors</ion-col>
-                    <ion-col size="6" size-md="2" ></ion-col>                    
+                    <ion-col size="6" size-md="2" ></ion-col>
+                    <ion-col size="6" size-md="2" ></ion-col>
                 </ion-row>
                 {% for movie in data %}
                 <ion-row>
-                    <ion-col size="6" size-md="2" >{{ movie.title}}</ion-col>
-                    <ion-col size="6" size-md="2" >Plot sumary</ion-col>
-                    <ion-col size="6" size-md="2" >Released date</ion-col>
-                    <ion-col size="6" size-md="2" >Main actors</ion-col>
-                    <ion-col size="6" size-md="2" >Directors</ion-col>
-                    <ion-col size="6" size-md="2" ></ion-col>
+                    <ion-col size="6" size-md="2" >{{movie.title}}</ion-col>
+                    <ion-col size="6" size-md="2" >{{movie.plotsumary}}</ion-col>
+                    <ion-col size="6" size-md="2" >{{movie.releaseddate}}</ion-col>
+                    <ion-col size="6" size-md="2" >{{movie.mainactors}}</ion-col>
+                    <ion-col size="6" size-md="2" >{{movie.directors}}</ion-col>
+                    <ion-col size="6" size-md="2" ><a href="/update_movie/{{ movie2.id }}">Update</a></ion-col>
+                    <ion-col size="6" size-md="2" ><a href="/delete_movie/{{ movie2.id }}">Delete</a></ion-col>
                 </ion-row>
                 {% endfor %}
-            </ion-grid>
-            <table>
-                {% for movie2 in data %}
-                <tr>
-                    <td>{{ movie2.title }} </td>
-                    <td>{{ movie2.plotsumary }} </td>
-                    <td>{{ movie2.price }} </td>
-                    <td><a href="/update_movie/{{ movie2.id }}">Update</a></td>
-                    <td><a href="/delete_movie/{{ movie2.id }}">Delete</a></td>                
-                </tr>
-                {% endfor %}
-            </table>
+            </ion-grid>            
         </ion-app>                
     </body>
 </html>

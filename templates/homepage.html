@@ -13,12 +13,20 @@
         <ion-app>
             <ion-grid>
                 <ion-row>
-                    <ion-col size="12" size-md="2" >Title</ion-col>
-                    <ion-col size="12" size-md="2" >Plot sumary</ion-col>
-                    <ion-col size="12" size-md="2" >Released date</ion-col>
-                    <ion-col size="12" size-md="2" >Main actors</ion-col>
-                    <ion-col size="12" size-md="2" >Directors</ion-col>
-                    <ion-col size="12" size-md="2" ></ion-col>                    
+                    <ion-col size="6" size-md="2" >Title</ion-col>
+                    <ion-col size="6" size-md="2" >Plot sumary</ion-col>
+                    <ion-col size="6" size-md="2" >Released date</ion-col>
+                    <ion-col size="6" size-md="2" >Main actors</ion-col>
+                    <ion-col size="6" size-md="2" >Directors</ion-col>
+                    <ion-col size="6" size-md="2" ></ion-col>                    
+                </ion-row>
+                <ion-row *ngFor="let movie of data">
+                    <ion-col size="6" size-md="2" >{{ movie.title}}</ion-col>
+                    <ion-col size="6" size-md="2" >Plot sumary</ion-col>
+                    <ion-col size="6" size-md="2" >Released date</ion-col>
+                    <ion-col size="6" size-md="2" >Main actors</ion-col>
+                    <ion-col size="6" size-md="2" >Directors</ion-col>
+                    <ion-col size="6" size-md="2" ></ion-col>
                 </ion-row>
             </ion-grid>
             <table>

@@ -77,6 +77,5 @@ def delete_movie(id):
     for movie in movies:        
       if movie["id"] == id:
         movies.remove(movie)
-        return f'Movie with id {id} has been removed', 200
-    
-  return f'Movie with id {id} not found', 404
+        return f'Movie with id {id} has been removed', 200    
+    return f'Movie with id {id} not found', 404
